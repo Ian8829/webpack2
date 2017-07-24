@@ -18,6 +18,17 @@ const config = {
           loader: 'css-loader'
         }),
         test: /\.css$/
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: { limit: 40000 }
+            // 40000 bites
+          },
+          'image-webpack-loader'
+        ]
       }
     ]
   },
